@@ -13,8 +13,8 @@ export default function AnalyzeInformation({ result, onReset }: { result: Analyz
     const getPriorityBadge = (priority: string) => {
         switch (priority) {
             case 'tinggi': return 'destructive';
-            case 'sedang': return 'primary';
-            default: return 'primary';
+            case 'sedang': return 'default';
+            default: return 'default';
         }
     };
 

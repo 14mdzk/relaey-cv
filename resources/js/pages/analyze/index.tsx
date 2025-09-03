@@ -9,7 +9,7 @@ import { AlertCircleIcon, Briefcase, FileText, Github, Upload } from "lucide-rea
 import { useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import axios from 'axios';
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Alert, AlertTitle } from "@/components/ui/alert";
 import type AnalyzeResult from "@/types/api/analyze";
 import AnalyzeInformation from "./result";
 import { Head } from "@inertiajs/react";
@@ -55,7 +55,7 @@ export default function () {
         }
 
         try {
-            const response = await axios.post('/api/analyze/upload', formData, {
+            await axios.post('/api/analyze/upload', formData, {
                 withCredentials: true,
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -183,7 +183,7 @@ export default function () {
                                 }
                                 onDrop={() => { }}
                                 onDragOver={(e) => e.preventDefault()}
-                                onClick={() => document.querySelector("[name='cv']")?.click()}
+                                onClick={() => (document.querySelector("[name='cv']") as HTMLElement)?.click()}
                             >
                                 <div>
                                     <Input type="file" name="cv" accept=".pdf,.rtf,.txt" className="hidden" onChange={handleFileChange} />
@@ -250,7 +250,7 @@ export default function () {
                                         }
                                         onDrop={() => { }}
                                         onDragOver={(e) => e.preventDefault()}
-                                        onClick={() => document.querySelector("[name='vacancy']")?.click()}
+                                        onClick={() => (document.querySelector("[name='vacancy']") as HTMLElement)?.click()}
                                     >
                                         <div>
                                             <Input type="file" name="vacancy" accept=".pdf,.rtf,.txt" className="hidden" onChange={handleFileChange} />
