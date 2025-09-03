@@ -1,61 +1,78 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Relaey - CV Analyzer
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Relaey is a web application designed to help you optimize your CV for job applications. It analyzes your resume against a job description, provides a compatibility score, and offers detailed recommendations for improvement.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **CV vs. Job Description Analysis**: Upload your CV and the job vacancy to get an in-depth analysis.
+- **Compatibility Score**: Get a percentage score indicating how well your CV matches the job requirements.
+- **Actionable Feedback**: Receive specific suggestions to improve different sections of your CV.
+- **Missing Keywords**: Identify important keywords from the job description that are missing in your resume.
+- **ATS-Friendly CV**: Get a revised, ATS-friendly version of your CV content.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel
+- **Frontend**: React, Inertia.js, TypeScript, Tailwind CSS
+- **Database**: SQLite (default), configurable in `.env`
 
-## Learning Laravel
+## Getting Started
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Follow these instructions to get the project up and running on your local machine.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerequisites
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP >= 8.2
+- Composer
+- Node.js & npm (or bun)
 
-## Laravel Sponsors
+### Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/your-username/relaey.git
+    cd relaey
+    ```
 
-### Premium Partners
+2.  **Install PHP dependencies:**
+    ```sh
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3.  **Install JavaScript dependencies:**
+    ```sh
+    bun install
+    # or npm install
+    ```
 
-## Contributing
+4.  **Set up your environment file:**
+    Copy the example environment file and generate your application key.
+    ```sh
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5.  **Configure your `.env` file:**
+    Open `.env` and set up your database credentials if you are not using the default SQLite configuration.
 
-## Code of Conduct
+6.  **Run database migrations:**
+    This will create the necessary tables in your database.
+    ```sh
+    php artisan migrate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Running the Application
 
-## Security Vulnerabilities
+To start the development servers for both the backend and frontend, run the following command from the project root:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```sh
+composer run dev
+```
 
-## License
+This command concurrently starts:
+- The Laravel development server (usually on `http://127.0.0.1:8000`)
+- The Vite development server for frontend assets.
+- A queue listener for background jobs.
+- Laravel Pail for real-time log monitoring.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Once the servers are running, you can access the application in your browser at the address provided by the `php artisan serve` command.
