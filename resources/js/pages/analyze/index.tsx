@@ -288,14 +288,7 @@ export default function () {
                     </Button>
                 </div>
             </form>
-            <div className="absolute bottom-0 left-0 right-0 h-16 animate-fade-up">
-                <div className="flex items-center justify-center">
-                    <Button onClick={() => window.open("https://github.com/14mdzk/relaey-cv", "_blank")} className="text-sm hover:cursor-pointer">
-                        <Github className="h-4 w-4" />
-                        <span className="">Source Code</span>
-                    </Button>
-                </div>
-            </div>
+
         </>
     )
 }
