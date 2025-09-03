@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { H3 } from "@/components/ui/typography";
 import type AnalyzeResult from "@/types/api/analyze";
-import { Copy, Github, Info } from "lucide-react";
+import { Copy, Info } from "lucide-react";
 
 export default function AnalyzeInformation({ result, onReset }: { result: AnalyzeResult, onReset: () => void }) {
     const getPriorityBadge = (priority: string) => {

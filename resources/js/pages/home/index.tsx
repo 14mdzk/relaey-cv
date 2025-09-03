@@ -3,7 +3,6 @@ import TypewriterEffect from "typewriter-effect";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Head, Link } from "@inertiajs/react";
-import { Github } from "lucide-react";
 
 export default function Home() {
 

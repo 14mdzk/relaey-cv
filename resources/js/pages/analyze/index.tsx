@@ -5,7 +5,7 @@ import { Select, SelectContent, SelectTrigger, SelectValue, SelectItem } from "@
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { H3 } from "@/components/ui/typography";
-import { AlertCircleIcon, Briefcase, FileText, Github, Upload } from "lucide-react";
+import { AlertCircleIcon, Briefcase, FileText, Upload } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import axios from 'axios';
