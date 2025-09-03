@@ -72,6 +72,8 @@ class AnalyzeController extends Controller
             ];
 
             $result = $this->generate($parts);
+            Storage::deleteDirectory($id);
+
             throw_if(
                 empty($result),
                 new \Exception('An error occurred while analyzing your briliant cv.')
